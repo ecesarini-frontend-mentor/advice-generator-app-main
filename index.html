@@ -1,3 +1,7 @@
+<!-- 
+  DONE: created HTML structure and main CSS.
+  TODO: place shuffle icon; dig on API; footer?
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,24 +9,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Advice generator app</title>
+<style>
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+/*input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+/*input[type=number] {
+  -moz-appearance: textfield;
+}
+input::-webkit-input-placeholder {
+  text-align: center;
+}*/
+
+:root {
+--mobile-width: 375px;
+--desktop-width: 1440px;
+
+--light-cyan: hsl(193, 38%, 86%);
+--neon-green: hsl(150, 100%, 66%);
+--grayish-blue: hsl(217, 19%, 38%);
+--dark-grayish-blue: hsl(217, 19%, 24%);
+--dark-blue: hsl(218, 23%, 16%);
+}
+
+html {
+  background-color: transparent;
+}
+
+body {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-blue);
+}
+main {
+  font-family: 'Manrope', sans-serif;
+  font-family: 'Space Mono', monospace;
+  font-size: 28px;
+  margin: 25%;
+}
+
+#advice-container {
+  margin: auto;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--dark-grayish-blue);
+  border-radius: 10px 10px;
+}
+#advice-id {
+  font-size: 50%;
+  color: var(--neon-green);
+}
+</style>
 </head>
+
 <body>
-
-  Advice #<!-- Advice ID goes here -->
-
-  "<!-- Advice text goes here -->"
-  
-  <div class="attribution">
+  <main>
+    <div id="advice-container">
+        <p id="advice-id">Advice #<span id="advice-id-number"><!-- Advice ID goes here --></span></p>
+        <p id="advice-content">"<!-- Advice text goes here -->"</p>
+        <img id="advice-decorator" src="./images/pattern-divider-desktop.svg">
+    </div>      
+  </main>
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="https://github.com/ecesarini-frontend-mentor/advice-generator-app-main">ecesarini</a>.
+  </footer>
 </body>
 </html>
