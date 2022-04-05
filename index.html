@@ -1,6 +1,6 @@
 <!-- 
-  DONE: created HTML structure and main CSS.
-  TODO: place shuffle icon; dig on API; footer?
+  TODO: -place shuffle icon; dig on API; footer?
+        -responsive image dice
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -60,34 +60,57 @@ main {
   font-size: 28px;
   margin: 25%;
 }
-
-#advice-container {
+#main-container {
+  position: relative;
+}
+#fb-advice-container {
   margin: auto;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--dark-grayish-blue);
   border-radius: 10px 10px;
+  color: white;
 }
-#advice-id {
+#fb-advice-id {
   font-size: 50%;
   color: var(--neon-green);
+}
+#fb-advice-decorator {
+  width: 80%;
+}
+
+#dice {
+  position: absolute;
+  background-color: var(--neon-green);
+  width: 10%;
+  bottom: -12.5%;
+  left: 45%;
+  border-radius: 50%;
+}
+#dice img {
+  position: relative;
+  width: 50%;
+  left: 25%;
 }
 </style>
 </head>
 
 <body>
   <main>
-    <div id="advice-container">
-        <p id="advice-id">Advice #<span id="advice-id-number"><!-- Advice ID goes here --></span></p>
-        <p id="advice-content">"<!-- Advice text goes here -->"</p>
-        <img id="advice-decorator" src="./images/pattern-divider-desktop.svg">
-    </div>      
+    <div id="main-container">
+      <div id="fb-advice-container">
+        <p id="fb-advice-id">Advice #<span id="fb-advice-id-number"><!-- Advice ID goes here --></span></p>
+        <p id="fb-advice-content">"<!-- Advice text goes here -->"</p>
+        <img id="fb-advice-decorator" src="images/pattern-divider-desktop.svg" alt="Bottom divider">
+      </div>
+      <div id="dice"><img src="images/icon-dice.svg" alt="Dice image, click it"></div>
+    </div>
   </main>
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/ecesarini-frontend-mentor/advice-generator-app-main">ecesarini</a>.
+    Coded by <a href="https://github.com/ecesarini-frontend-mentor/fb-advice-generator-app-main">ecesarini</a>.
   </footer>
 </body>
 </html>
