@@ -1,6 +1,6 @@
 <!-- 
-  DONE: "dice" into input element, positioning it.
-  TODO: look at agam.js
+  DONE: event click (response, style)
+  TODO: look at css: dimension about vw, font-style, margins.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -42,10 +42,10 @@ body {
   background-color: var(--dark-blue);
 }
 main {
-  font-family: 'Manrope', sans-serif;
-  font-family: 'Space Mono', monospace;
   font-size: 28px;
   margin: 25%;
+  font-family: 'Space Mono', monospace;
+  font-family: 'Manrope', sans-serif;
 }
 #fb-container {
   position: relative;
@@ -68,12 +68,12 @@ main {
   width: 80%;
 }
 
-#button-dice {
+#fb-button-dice {
   position: absolute;
   bottom: -1.8em;
   width: 3.5em;
   height: 3.5em;
-  border: solid var(--neon-green);
+  border: 0 solid var(--neon-green);
   border-radius: 50% 50%;
   background-color: var(--neon-green);
   background-image: url(images/icon-dice.svg);
@@ -87,10 +87,10 @@ main {
 <body>
   <main>
     <div id="fb-container">
-      <p id="fb-advice-id">Advice #<span id="fb-advice-id-number"><!-- Advice ID goes here --></span></p>
-      <p id="fb-advice-content">"<!-- Advice text goes here -->"</p>
+      <p id="fb-advice-id">Advice #<span id="fb-advice-id-number"></span></p>
+      <p><q id="fb-advice-content"></q></p>
       <img id="fb-advice-decorator" src="images/pattern-divider-desktop.svg" alt="Bottom divider">
-      <input id="button-dice" type="button">
+      <input id="fb-button-dice" type="button">
     </div>
   </main>
   <footer class="attribution">

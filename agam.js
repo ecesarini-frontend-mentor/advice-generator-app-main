@@ -1,19 +1,49 @@
 // TODO: look at bookmarks 'Code-Dev' about getting JSON data from API
+class agamReq {
+    constructor(buttonApi, api, adviceId, adviceContent) {
+        this.buttonApi = buttonApi;
+        this.api = api;
+        this.adviceId = adviceId;
+        this.adviceContent = adviceContent;
+        this.ev = ['mousedown', 'mouseup', 'click'];
+        this.init();
+    }
+
+    init() {
+        this.getAdvice(this.api)
+        this.ev.forEach( ev => this.buttonApi.addEventListener(ev, this) );
+    }
+    handleEvent(e) {
+        let ect = e.currentTarget;
+        switch(e.type) {
+            case 'mousedown':
+            case 'mousup':
+                this.setStyle(e, ect);
+                break;
+            case 'click':
+                this.getAdvice(this.api);
+                break;
+        }
+    }
+    setStyle(e, ect) {
+        ect.style.backgroundColor = (e.type === 'mousedown')? 'white' : '';
+    }
+    async getAdvice(url) {
+        let apiResponse = await fetch(url).then(response => response.json()).then(prop => prop.slip),
+            id = apiResponse.id,
+            advice = apiResponse.advice;
+        this.adviceId.innerText = ' ' + id;
+        this.adviceContent.innerText = advice;       
+    }
+}
 
 function agamInit() {
-    /*let adSlipResp = "https://api.adviceslip.com/advice";
-    const request = new Request('https://api.adviceslip.com/advice',
-         {method: 'GET', body: '{"foo": "bar"}'});
+    let buttonApi = document.querySelector('#fb-button-dice'),
+        api = 'https://api.adviceslip.com/advice',
+        adviceId = document.querySelector('#fb-advice-id-number'),
+        adviceContent = document.querySelector('#fb-advice-content');
 
-    const url = request.url;
-    const method = request.method;
-    const credentials = request.credentials;
-    const bodyUsed = request.bodyUsed;*/
-    const req = new Request('https://api.adviceslip.com/advice', {method: 'GET'});
-    const resp = fetch(req).then(r => r.json());
-    console.log(resp);
-
-    //alert(response);
+    new agamReq(buttonApi, api, adviceId, adviceContent);
 }
 
 agamInit();
