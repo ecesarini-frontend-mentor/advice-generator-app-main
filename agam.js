@@ -17,7 +17,7 @@ class agamReq {
         let ect = e.currentTarget;
         switch(e.type) {
             case 'mousedown':
-            case 'mousup':
+            case 'mouseup':
                 this.setStyle(e, ect);
                 break;
             case 'click':

@@ -1,0 +1,93 @@
+.attribution { font-size: 11px; text-align: center; color: white;}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+:root { /* in HTML :root represents <html> except that has an higher specificity */
+--mobile-width: 375px;
+--desktop-width: 1440px;
+
+--light-cyan: hsl(193, 38%, 86%);
+--neon-green: hsl(150, 100%, 66%);
+--grayish-blue: hsl(217, 19%, 38%);
+--dark-grayish-blue: hsl(217, 19%, 24%);
+--dark-blue: hsl(218, 23%, 16%);
+}
+
+html {
+  background-color: transparent;
+}
+
+html, body {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-blue);
+}
+main {
+  font-size: 28px;
+  margin: 10% 25%;
+  font-family: 'Space Mono', monospace;
+  font-family: 'Manrope', sans-serif;
+}
+#fb-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--dark-grayish-blue);
+  border-radius: 10px 10px;
+  color: white;
+}
+
+#fb-advice-id {
+  margin: 8% auto 5% auto;
+  font-size: 45%;
+  font-weight: 700;
+  color: var(--neon-green);
+  letter-spacing: 4px;
+}
+#fb-advice-content {
+  margin-top: 0;
+  width: 80%;
+  text-align: center;
+  font-weight: 600;
+}
+#fb-advice-content::before {
+  content: "\201C";
+}
+#fb-advice-content::after {
+  content: "\201D";
+}
+#fb-advice-decorator {
+  width: 80%;
+  margin-bottom: 15px;
+}
+
+#fb-button-dice {
+  position: absolute;
+  bottom: -1.8em;
+  width: 3.5em;
+  height: 3.5em;
+  border: 0 solid var(--neon-green);
+  border-radius: 50% 50%;
+  background-color: var(--neon-green);
+  background-image: url(images/icon-dice.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+/* Mobile Design */
+@media only screen and (max-width: 500px) {
+  body {
+    height: 100vh;
+  }
+  main {
+    margin: 40% 5%;
+  }
+}
