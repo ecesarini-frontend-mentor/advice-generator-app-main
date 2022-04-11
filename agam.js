@@ -1,5 +1,4 @@
-// TODO: look at bookmarks 'Code-Dev' about getting JSON data from API
-class agamReq {
+class AgamReq {
     constructor(buttonApi, api, adviceId, adviceContent) {
         this.buttonApi = buttonApi;
         this.api = api;
@@ -43,7 +42,7 @@ function agamInit() {
         adviceId = document.querySelector('#fb-advice-id-number'),
         adviceContent = document.querySelector('#fb-advice-content');
 
-    new agamReq(buttonApi, api, adviceId, adviceContent);
+    new AgamReq(buttonApi, api, adviceId, adviceContent);
 }
 
 agamInit();
